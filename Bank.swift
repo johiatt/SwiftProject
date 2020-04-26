@@ -4,7 +4,7 @@ public class Bank {
     //does internal have enouh protection? 
 
     //needs initializers to run
-    internal var accounts = [Account]()
+    private var accounts = [Account]()
     private var name: String;
     init(name: String){
       self.name = name
@@ -23,8 +23,7 @@ public class Bank {
     public func toString() -> String{
       var r="Bank: \(name)\n";
       for item in accounts{
-         var x = item.toString()
-          r+="\(x)";
+          r+="\(item.toString())";
       }
       return r;
     }

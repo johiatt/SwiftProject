@@ -8,7 +8,7 @@ public class CheckingAccount : Account {
     // self.balance = balance
     super.init(number: number, balance:balance, customer:customer)
   }
-
+  
   //no need to override since no change
   
   // public override func accrue(rate: Double) ->(){
