@@ -1,2 +1,2 @@
 language = "swift"
-run = "swiftc main.swift Bank.swift Account.swift "
+run = "swiftc main.swift Bank.swift Account.swift"

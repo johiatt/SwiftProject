@@ -2,6 +2,7 @@
 //subclass will be like class CheckingAccount : Account
 //and the funcs that need to be overwritten will use "override"
 import Foundation
+
 public class Account {
     //in order for the properties to be inherited, they can't be private? 
     //does internal have enouh protection? 

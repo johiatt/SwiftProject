@@ -6,16 +6,21 @@ public class Bank {
     //needs initializers to run
     internal var accounts = [Account]()
 
+    public func add(account: Account ) -> () {
+	    accounts.append(account);
+    }
+
     public func accrue(rate: Double) {
       for account in accounts{
           account.accrue(rate: rate);
       }
     }
 
-    public func  toString() -> String {
+    public func toString() -> String{
       var r="";
-      for account in accounts{
-          r+="\(account)\n";
+      for item in accounts{
+         var x = item.toString()
+          r+="\(x)\n";
       }
       return r;
     }
