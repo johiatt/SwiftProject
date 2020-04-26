@@ -5,6 +5,10 @@ public class Bank {
 
     //needs initializers to run
     internal var accounts = [Account]()
+    private var name: String;
+    init(name: String){
+      self.name = name
+    }
 
     public func add(account: Account ) -> () {
 	    accounts.append(account);
@@ -17,7 +21,7 @@ public class Bank {
     }
 
     public func toString() -> String{
-      var r="";
+      var r="Bank: \(name)\n";
       for item in accounts{
          var x = item.toString()
           r+="\(x)\n";

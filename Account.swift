@@ -2,19 +2,19 @@
 //subclass will be like class CheckingAccount : Account
 //and the funcs that need to be overwritten will use "override"
 import Foundation
-
 public class Account {
     //in order for the properties to be inherited, they can't be private? 
     //does internal have enouh protection? 
 
     //needs initializers to run
     internal var number: Int;
-    //private var customer: Customer;
+    internal var customer: Customer;
     internal var balance: Double;
     //init is the constructor
-    init(number:Int, balance: Double){
+    init(number:Int, balance: Double, customer:Customer){
       self.number = number
       self.balance = balance
+      self.customer = customer
     }
 
     public func accrue(rate: Double) -> (){};
@@ -37,23 +37,11 @@ public class Account {
 	    //return number+":"+customer+":"+balance;
       //the string system makes it very easy to add variables
       //to the toString. No "addition" of strings.
-      return "\(number) : \(balance)"
+      return "\(customer.toString()) : \(number) : \(balance)\n"
     }
 }
 
-public class AccountSub : Account {
-  private var interest  = 0.0;
-  //overriding instance method must be as accessible as the declaration it overrides
-  override init(number:Int, balance: Double){
-    // self.number = number
-    // self.balance = balance
-    super.init(number: number, balance:balance)
-  }
-  public override func accrue(rate: Double) ->(){
-    	interest+=balance*rate;
-	    balance+=balance*rate;
-  }
-}
+
 
 
 
