@@ -2,14 +2,20 @@
 public class SavingsAccount : Account {
   //private 
   private var interest  = 0.0;
-  //overriding instance method must be as accessible as the declaration it overrides
+  private var balance: Double
   override init(number:Int, balance: Double, customer:Customer){
-    // self.number = number
-    // self.balance = balance
+    //initialize variables you want to use in subclass functions BEFORE super.init call
+    self.balance = balance
     super.init(number: number, balance:balance, customer:customer)
+        
   }
   public override func accrue(rate: Double) ->(){
-    self.interest += balance*rate;
-    self.balance += balance*rate;
+    //if you want to USE the inherited variable, it needs to be declared 
+    //and initialized in the constructor. 
+    interest += balance*rate
+    balance += balance*rate
+
+    // interest += balance*rate
+    // balance += balance*rate
   }
 }

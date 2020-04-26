@@ -24,14 +24,8 @@ public class Bank {
       var r="Bank: \(name)\n";
       for item in accounts{
          var x = item.toString()
-          r+="\(x)\n";
+          r+="\(x)";
       }
       return r;
     }
 }
-//	Bank bank=new Bank();
-	// Customer c=new Customer("Ann");
-	// bank.add(new CheckingAccount("01001",c,100.00));
-	// bank.add(new SavingsAccount("01002",c,200.00));
-	// bank.accrue(0.02);
-	// System.out.println(bank);

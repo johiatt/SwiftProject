@@ -2,14 +2,15 @@
 //subclass will be like class CheckingAccount : Account
 //and the funcs that need to be overwritten will use "override"
 import Foundation
+//must be abstract meaning no defined variables
 public class Account {
     //in order for the properties to be inherited, they can't be private? 
     //does internal have enouh protection? 
 
     //needs initializers to run
-    internal var number: Int;
-    internal var customer: Customer;
-    internal var balance: Double;
+    private var number: Int;
+    private var customer: Customer;
+    private var balance: Double;
     //init is the constructor
     init(number:Int, balance: Double, customer:Customer){
       self.number = number
@@ -40,35 +41,3 @@ public class Account {
       return "\(customer.toString()) : \(number) : \(balance)\n"
     }
 }
-
-
-
-
-
-
-public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
-    let dispatchTime = DispatchTime.now() + seconds
-    dispatchLevel.dispatchQueue.asyncAfter(deadline: dispatchTime, execute: closure)
-}
-
-public enum DispatchLevel {
-    case main, userInteractive, userInitiated, utility, background
-    var dispatchQueue: DispatchQueue {
-        switch self {
-        case .main:                 return DispatchQueue.main
-        case .userInteractive:      return DispatchQueue.global(qos: .userInteractive)
-        case .userInitiated:        return DispatchQueue.global(qos: .userInitiated)
-        case .utility:              return DispatchQueue.global(qos: .utility)
-        case .background:           return DispatchQueue.global(qos: .background)
-        }
-    }
-}
-
-
-
-//parameters require names
-// acc.deposit(amount: 25)
-// acc.withdraw(amount: 10)
-// print(acc.accBalance())
-// print(acc.toString())
-
