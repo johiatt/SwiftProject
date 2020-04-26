@@ -1,6 +1,7 @@
 //The class doesn't use customers as we don't have that class yet. 
 //subclass will be like class CheckingAccount : Account
 //and the funcs that need to be overwritten will use "override"
+import Foundation
 public class Account {
     //in order for the properties to be inherited, they can't be private? 
     //does internal have enouh protection? 
@@ -53,10 +54,28 @@ public class AccountSub : Account {
   }
 }
 
-var acc = Account(number: 1, balance: 50)
-var accSub = AccountSub(number:1 ,balance:30)
-print(accSub.toString())
-accSub.accrue(rate:32.0)
+
+
+
+public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
+    let dispatchTime = DispatchTime.now() + seconds
+    dispatchLevel.dispatchQueue.asyncAfter(deadline: dispatchTime, execute: closure)
+}
+
+public enum DispatchLevel {
+    case main, userInteractive, userInitiated, utility, background
+    var dispatchQueue: DispatchQueue {
+        switch self {
+        case .main:                 return DispatchQueue.main
+        case .userInteractive:      return DispatchQueue.global(qos: .userInteractive)
+        case .userInitiated:        return DispatchQueue.global(qos: .userInitiated)
+        case .utility:              return DispatchQueue.global(qos: .utility)
+        case .background:           return DispatchQueue.global(qos: .background)
+        }
+    }
+}
+
+
 
 //parameters require names
 // acc.deposit(amount: 25)
