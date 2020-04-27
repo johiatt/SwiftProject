@@ -31,3 +31,4 @@ print(c.getInterest())
 // b.accrue(rate:2.2)
 // print(b.toString())
 
+//.gitignore test
