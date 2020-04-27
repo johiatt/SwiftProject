@@ -1,13 +1,8 @@
-//The class doesn't use customers as we don't have that class yet. 
 //subclass will be like class CheckingAccount : Account
 //and the funcs that need to be overwritten will use "override"
 import Foundation
 //must be abstract meaning no defined variables
 public class Account {
-    //in order for the properties to be inherited, they can't be private? 
-    //does internal have enouh protection? 
-
-    //needs initializers to run
     private var number: Int;
     private var customer: Customer;
     private var balance: Double;
@@ -19,10 +14,8 @@ public class Account {
     }
 
     public func accrue(rate: Double) -> (){};
-    //public func accrue(){};
 
-    //can't have the same name as private variable
-    func accBalance() -> Double {
+    func getBalance() -> Double {
 	    return balance;
     }
 
@@ -35,9 +28,8 @@ public class Account {
     }
 
     func toString() -> String{
-	    //return number+":"+customer+":"+balance;
       //the string system makes it very easy to add variables
-      //to the toString. No "addition" of strings.
+      //to the toString. No "addition" of strings required.
       return "\(customer.toString()) : \(number) : \(balance)\n"
     }
 }

@@ -1,8 +1,5 @@
 import Foundation
 public class Bank {
-    //in order for the properties to be inherited, they can't be private? 
-    //does internal have enouh protection? 
-
     //needs initializers to run
     private var accounts = [Account]()
     private var name: String;

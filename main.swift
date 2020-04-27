@@ -6,9 +6,9 @@ import Foundation
 var b = Bank(name:"Bank1")
 var c = SavingsAccount(number:1, balance: 5, customer: Customer(name: "Bob"))
 //accrue is not changing values? 
-print(c.accBalance())
+print(c.getBalance())
 c.accrue(rate: 40)
-print(c.accBalance())
+print(c.getBalance())
 //toplevel functions work..
 //c.deposit(amount:50)
 //print(c.getBalance())
