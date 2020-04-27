@@ -4,5 +4,4 @@ public class CheckingAccount : Account {
   override init(number:Int, balance: Double, customer:Customer){
     super.init(number: number, balance:balance, customer:customer)
   }
-
 }

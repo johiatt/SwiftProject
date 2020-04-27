@@ -8,4 +8,7 @@ public class SavingsAccount : Account {
     interest += getBalance()*rate
     deposit(amount:(interest*getBalance()))
   }
+  public func getInterest() -> Double {
+    return interest;
+  }
 }

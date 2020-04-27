@@ -9,6 +9,7 @@ var c = SavingsAccount(number:1, balance: 5, customer: Customer(name: "Bob"))
 print(c.getBalance())
 c.accrue(rate: 40)
 print(c.getBalance())
+print(c.getInterest())
 //toplevel functions work..
 //c.deposit(amount:50)
 //print(c.getBalance())
