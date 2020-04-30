@@ -63,7 +63,7 @@ while(read != "exit"){
     print("b - Buy Bank: \(String(format: "$%.02f", bankPrice))\tCurrently have: \(p.getBank().count)")
     print("l - Buy Lobbyists: \(String(format: "$%.02f", lobbyistPrice))\tCurrently have: \(p.getBank().count)")
     print("p - Activate predatory loans: \(String(format: "$%.02f", loanPrice))\tCurrently have: \(p.hasLoans())")
-    print("o -  Increase Overdraft Fee: \(String(format: "$%.02f", 0.0))\tCurrently have: \(p.getOverdraft())")
+    print("o - Increase Overdraft Fee: \(String(format: "$%.02f", 0.0))\tCurrently have: \(p.getOverdraft())")
     print("e - exit")
     read = String(readLine()!)
   }
