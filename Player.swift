@@ -5,7 +5,7 @@ import Foundation
 //increase overdraft charges
 //push worthless upgrades
 public class Player {
-  private var money = 0
+  private var money = 0.0
   private var banks = [Bank]()
   //last one week
   private var predatoryLoans = false
@@ -34,5 +34,11 @@ public class Player {
   }
   public func getBank() -> [Bank]{
     return banks
+  }
+  public func getMoney() -> Double{
+    return money
+  }
+  public func addMoney(cash:Double){
+    money += cash
   }
 }

@@ -32,6 +32,6 @@ public class Account {
     func toString() -> String{
       //the string system makes it very easy to add variables
       //to the toString. No "addition" of strings required.
-      return "\(customer.toString()) : \(number) : \(balance)\n"
+      return "\(customer.toString()) : \(number) : \(String(format: "$%.02f", balance))"
     }
 }

@@ -5,20 +5,19 @@ public class Bank {
     private var max = 100
     private var size = 0
     private var name: String
-    private var rate = 1.0
+    private var rate = 0.0000002
     init(name: String){
       self.name = name
     }
 
     public func add(account: Account ) -> () {
-      if(size>=max){
+      if(accounts.count>=max){
         print("Bank full")
       }
 	    else{
         //size++    --not allowed
-        size+=1
         accounts.append(account)
-        print("\(account.toString()) added to \(self.toString())")
+        print("\t\(account.toString()) added to \(self.getName())")
       }
       
     }
@@ -51,9 +50,13 @@ public class Bank {
       for account in accounts{
         //to be a valid floating point literal it must be 0.05 rather
         //than .05
-        total += 0.05*account.getBalance()
-        account.withdraw(amount:0.05*account.getBalance())
+        total += 0.0005*account.getBalance()
+        account.withdraw(amount:0.0005*account.getBalance())
       }
       return total
+    }
+
+    public func getName() -> String {
+      return name
     } 
 }
