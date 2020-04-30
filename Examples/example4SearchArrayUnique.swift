@@ -13,11 +13,11 @@ for number in list {
     }
 
     if new {
-        unique.append(number)
+        uniqueNumbers.append(number)
     }
 }
 
-for number in unique {
+for number in uniqueNumbers {
     print(number)
 }
      
