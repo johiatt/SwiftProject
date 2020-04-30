@@ -41,4 +41,7 @@ public class Player {
   public func addMoney(cash:Double){
     money += cash
   }
+  public func getLobbyists() -> Int{
+    return lobbyists
+  }
 }
