@@ -6,6 +6,8 @@ public class Account {
     private var number: Int;
     private var customer: Customer;
     private var balance: Double;
+    private var isPremium: Bool?
+
     //init is the constructor
     init(number:Int, balance: Double, customer:Customer){
       self.number = number

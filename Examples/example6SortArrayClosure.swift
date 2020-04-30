@@ -5,7 +5,7 @@ var intArray = [8,7,6,5,4,3,2,1]
 
 let forwardSortClosure:(Int, Int) -> Bool = {    
   (numberOne:Int, numberTwo:Int) -> Bool in
-  if numberOne < numberTwo{				
+  if numberOne < numberTwo {				
     return true			
   }
   return false
