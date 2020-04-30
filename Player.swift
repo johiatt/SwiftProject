@@ -12,7 +12,7 @@ public class Player {
   //lobbyists 
   private var lobbyists = 0
   //every account has a chance to overdraft
-  private var overdraftCharge = 1
+  private var overdraftCharge = 0.08
   //increase max possible accounts added per day
   private var advertisements = 0
 
@@ -43,5 +43,8 @@ public class Player {
   }
   public func getLobbyists() -> Int{
     return lobbyists
+  }
+  public func getOverdraft() -> Double{
+    return overdraftCharge
   }
 }

@@ -8,6 +8,7 @@ let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunda
 var p = Player()
 var weeks = 0
 p.add(bank: Bank(name:"FirstBank"))
+p.add(bank: Bank(name:"SecondBank"))
 var read:String?
 var crypto = 13.0
 var bankPrice = 500000.00
@@ -18,7 +19,7 @@ public func weekLoop(){
   //Each bank has 100 max accounts.
   //get .005 out of every account's value each day
   weeks+=1
-  crypto += Double.random(in:0..<0.5)
+  crypto += Double.random(in:0..<1.5)
   print("We are currently on week \(weeks)")
   print("Cryptocurrency's total share is %\(String(format: "%.02f", crypto))")
   for day in days{
@@ -61,8 +62,8 @@ while(read != "exit"){
     system("clear")
     print("b - Buy Bank: \(String(format: "$%.02f", bankPrice))\tCurrently have: \(p.getBank().count)")
     print("l - Buy Lobbyists: \(String(format: "$%.02f", lobbyistPrice))\tCurrently have: \(p.getBank().count)")
-    print("p - Activate predatory loans: \(String(format: "$%.02f", loanPrice))\tCurrently have: \(p.getLobbyists())")
-    print("o -  Increase Overdraft Fee: \(String(format: "$%.02f", 0.0))\tCurrently have: \(p.hasLoans())")
+    print("p - Activate predatory loans: \(String(format: "$%.02f", loanPrice))\tCurrently have: \(p.hasLoans())")
+    print("o -  Increase Overdraft Fee: \(String(format: "$%.02f", 0.0))\tCurrently have: \(p.getOverdraft())")
     print("e - exit")
     read = String(readLine()!)
   }
